@@ -1,1 +1,18 @@
-<p>About component</p>
+<div class="content">
+  <h1>
+    {{ title }}
+  </h1>
+  <h2>{{ presentation }}</h2>
+  <hr />
+  <p>
+    {{ description }}
+  </p>
+  <ul>
+    <li *ngFor="let link of links">
+      <a href="{{ link.URL }}">{{ link.name }}</a>
+    </li>
+  </ul>
+  <hr />
+  <p>{{ contact.description }}</p>
+  <a href="mailto:{{ contact.email }}?Subject=Hi!">{{ contact.email }}</a>
+</div>
