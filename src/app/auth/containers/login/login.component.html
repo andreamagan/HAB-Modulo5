@@ -1,20 +1,19 @@
 <form [formGroup]="loginForm" (ngSubmit)="login()">
   <div>
-    <input type="text" placeholder="Email" formControlName="email" />
+    <input type="text" placeholder="Email" formControlName="email" snHighlightParty />
     <div *ngIf="loginForm.get('email').invalid && loginForm.get('email').dirty">
       <span>This field is required</span>
     </div>
   </div>
   <div>
-    <input type="text" placeholder="Password" formControlName="password" />
-    <div
-      *ngIf="
+    <input type="text" placeholder="Password" formControlName="password" snHighlightParty />
+    <div *ngIf="
         loginForm.get('password').invalid && loginForm.get('password').dirty
-      "
-    >
+      ">
       <span>This field is required</span>
     </div>
   </div>
+
   <button>
     Login
   </button>

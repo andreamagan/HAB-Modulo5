@@ -1,48 +1,36 @@
 <form [formGroup]="registerForm" (ngSubmit)="register()">
   <div>
-    <input type="text" placeholder="Full Name" formControlName="fullName" />
-    <div
-      *ngIf="
+    <input type="text" placeholder="Full Name" formControlName="fullName" snHighlightParty />
+    <div *ngIf="
         registerForm.get('fullName').invalid &&
         registerForm.get('fullName').dirty
-      "
-    >
+      ">
       <span>This field is required</span>
     </div>
   </div>
   <div>
-    <input type="text" placeholder="Email" formControlName="email" />
-    <div
-      *ngIf="
+    <input type="text" placeholder="Email" formControlName="email" snHighlightParty />
+    <div *ngIf="
         registerForm.get('email').invalid && registerForm.get('email').dirty
-      "
-    >
+      ">
       <span>This field is required</span>
     </div>
   </div>
   <div>
-    <input type="text" placeholder="Password" formControlName="password" />
-    <div
-      *ngIf="
+    <input type="text" placeholder="Password" formControlName="password" snHighlightParty />
+    <div *ngIf="
         registerForm.get('password').invalid &&
         registerForm.get('password').dirty
-      "
-    >
+      ">
       <span>This field is required</span>
     </div>
   </div>
   <div>
-    <input
-      type="text"
-      placeholder="ConfirmPassword"
-      formControlName="confirmPassword"
-    />
-    <div
-      *ngIf="
+    <input type="text" placeholder="ConfirmPassword" formControlName="confirmPassword" snHighlightParty />
+    <div *ngIf="
         registerForm.get('confirmPassword').invalid &&
         registerForm.get('confirmPassword').dirty
-      "
-    >
+      ">
       <span>This field is required</span>
     </div>
   </div>

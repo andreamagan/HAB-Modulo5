@@ -5,9 +5,10 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { AuthRoutingModule } from "./auth-routing.module";
 import { LoginComponent } from "./containers/login/login.component";
 import { RegisterComponent } from "./containers/register/register.component";
+import { HighlightPartyDirective } from './directives/highlight-party.directive';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, HighlightPartyDirective],
   imports: [
     CommonModule,
     AuthRoutingModule,
