@@ -1,42 +1,40 @@
-<form [formGroup]="registerForm" (ngSubmit)="register()">
-  <div>
-    <input type="text" placeholder="Full Name" formControlName="fullName" snHighlightParty />
-    <div *ngIf="
-        registerForm.get('fullName').invalid &&
-        registerForm.get('fullName').dirty
-      ">
-      <span>This field is required</span>
-    </div>
-  </div>
-  <div>
-    <input type="text" placeholder="Email" formControlName="email" snHighlightParty />
-    <div *ngIf="
-        registerForm.get('email').invalid && registerForm.get('email').dirty
-      ">
-      <span>This field is required</span>
-    </div>
-  </div>
-  <div>
-    <input type="text" placeholder="Password" formControlName="password" snHighlightParty />
-    <div *ngIf="
-        registerForm.get('password').invalid &&
-        registerForm.get('password').dirty
-      ">
-      <span>This field is required</span>
-    </div>
-  </div>
-  <div>
-    <input type="text" placeholder="ConfirmPassword" formControlName="confirmPassword" snHighlightParty />
-    <div *ngIf="
-        registerForm.get('confirmPassword').invalid &&
-        registerForm.get('confirmPassword').dirty
-      ">
-      <span>This field is required</span>
-    </div>
-  </div>
-  <button>
-    Register
-  </button>
-</form>
-
+<sn-form>
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <sn-form-control [control]="registerForm.get('fullName')">
+      <input
+        type="text"
+        placeholder="Full Name"
+        formControlName="fullName"
+        snHighlightParty
+      />
+    </sn-form-control>
+    <sn-form-control [control]="registerForm.get('email')">
+      <input
+        type="text"
+        placeholder="Email"
+        formControlName="email"
+        snHighlightParty
+      />
+    </sn-form-control>
+    <sn-form-control [control]="registerForm.get('password')">
+      <input
+        type="text"
+        placeholder="Password"
+        formControlName="password"
+        snHighlightParty
+      />
+    </sn-form-control>
+    <sn-form-control [control]="registerForm.get('confirmPassword')">
+      <input
+        type="text"
+        placeholder="ConfirmPassword"
+        formControlName="confirmPassword"
+        snHighlightParty
+      />
+    </sn-form-control>
+    <button>
+      Register
+    </button>
+  </form>
+</sn-form>
 <p>{{ registerForm.value | json }}</p>

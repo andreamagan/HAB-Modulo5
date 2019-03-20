@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { AuthService } from "../../services/auth.service";
+import { MailValidator } from "../../validators/email.validators";
+import { MatchPasswordValidator } from "../../validators/match-password.validators.1";
 
 @Component({
   selector: "sn-register",
@@ -8,12 +10,18 @@ import { AuthService } from "../../services/auth.service";
   styleUrls: ["./register.component.scss"]
 })
 export class RegisterComponent implements OnInit {
-  registerForm = this.fb.group({
-    fullName: ["", [Validators.required]],
-    email: ["", [Validators.required, Validators.email]],
-    password: ["", [Validators.required, Validators.minLength(6)]],
-    confirmPassword: ["", [Validators.required, Validators.minLength(6)]]
-  });
+  registerForm = this.fb.group(
+    {
+      fullName: ["", [Validators.required]],
+      email: ["", [Validators.required, MailValidator]],
+      password: ["", [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ["", [Validators.required, Validators.minLength(6)]]
+    },
+    {
+      updateOn: "blur",
+      validators: [MatchPasswordValidator]
+    }
+  );
 
   constructor(private fb: FormBuilder, private authService: AuthService) {}
 
