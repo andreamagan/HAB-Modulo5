@@ -6,6 +6,8 @@ import { AuthRoutingModule } from "./auth-routing.module";
 import { LoginComponent } from "./containers/login/login.component";
 import { RegisterComponent } from "./containers/register/register.component";
 import { SharedModule } from "../shared/shared.module";
+import { NgxsModule } from '@ngxs/store';
+import { AuthState } from './store/auth.state';
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
@@ -14,7 +16,8 @@ import { SharedModule } from "../shared/shared.module";
     AuthRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    NgxsModule.forFeature([AuthState])
   ],
   exports: [LoginComponent, RegisterComponent]
 })
