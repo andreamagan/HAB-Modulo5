@@ -4,7 +4,7 @@ export function MatchPasswordValidator(
   group: FormGroup
 ): { [key: string]: boolean } {
   if (group.get("password").value !== group.get("email").value) {
-    return { passwordNotMatch: true };
+    return { passwordDoesNotMatch: true };
   }
   return null;
 }

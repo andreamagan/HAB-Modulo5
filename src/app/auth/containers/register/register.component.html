@@ -1,40 +1,23 @@
 <sn-form>
   <form [formGroup]="registerForm" (ngSubmit)="register()">
     <sn-form-control [control]="registerForm.get('fullName')">
-      <input
-        type="text"
-        placeholder="Full Name"
-        formControlName="fullName"
-        snHighlightParty
-      />
+      <input type="text" placeholder="Full name" formControlName="fullName" />
     </sn-form-control>
     <sn-form-control [control]="registerForm.get('email')">
-      <input
-        type="text"
-        placeholder="Email"
-        formControlName="email"
-        snHighlightParty
-      />
+      <input type="email" placeholder="Email" formControlName="email" />
     </sn-form-control>
     <sn-form-control [control]="registerForm.get('password')">
-      <input
-        type="text"
-        placeholder="Password"
-        formControlName="password"
-        snHighlightParty
-      />
+      <input type="password" placeholder="Password" formControlName="password" />
     </sn-form-control>
     <sn-form-control [control]="registerForm.get('confirmPassword')">
-      <input
-        type="text"
-        placeholder="ConfirmPassword"
-        formControlName="confirmPassword"
-        snHighlightParty
-      />
+      <input type="password" placeholder="Confirm password" formControlName="confirmPassword" />
     </sn-form-control>
-    <button>
-      Register
-    </button>
+    <div class="button-wrapper">
+      <button>
+        Register
+      </button>
+    </div>
   </form>
 </sn-form>
+
 <p>{{ registerForm.value | json }}</p>
